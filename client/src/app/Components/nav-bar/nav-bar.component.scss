@@ -1,0 +1,19 @@
+
+mat-toolbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+mat-toolbar a:hover {
+    text-decoration: underline;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }

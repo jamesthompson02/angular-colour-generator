@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutPageComponent } from './Pages/about-page/about-page.component';
 import { HomePageComponent } from './Pages/home-page/home-page.component';
 import { NotFoundPageComponent } from './Pages/not-found-page/not-found-page.component';
 import { RandomGeneratorPageComponent } from './Pages/random-generator-page/random-generator-page.component';
@@ -7,6 +8,7 @@ import { RangeSliderPageComponent } from './Pages/range-slider-page/range-slider
 
 const appRoutes: Routes = [
     { path: '', component: HomePageComponent },
+    { path: 'about', component: AboutPageComponent},
     { path: 'random', component: RandomGeneratorPageComponent },
     { path: 'slider', component: RangeSliderPageComponent },
     { path: '**', component: NotFoundPageComponent }
