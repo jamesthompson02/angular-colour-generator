@@ -1,0 +1,26 @@
+.container {
+    height: calc(100vh - 48px - 64px);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 50%;
+    height: 50%;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.card-content-organiser {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.paragraph-styling {
+    text-align: center;
+    margin: 1rem 0;
+}

@@ -1,0 +1,12 @@
+<div class="container">
+    <mat-card class="card">
+        <mat-card-content class="card-content-organiser">
+            <app-sub-header text="RxJS Colour Generator"></app-sub-header>
+            <p class="paragraph-styling">This tab that you're viewing uses an Angular Service + RxJS in order to change the background colour. Click the button below to get a random colour.</p>
+            <div *ngIf="clickCounter">
+                Hello
+            </div>
+            <app-btn text="Click" (btnClick)="handleClick()"></app-btn>
+        </mat-card-content>
+    </mat-card>
+</div>

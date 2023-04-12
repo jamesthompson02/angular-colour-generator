@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-btn',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./btn.component.scss']
 })
 export class BtnComponent {
+  @Input() text : string; 
+  @Output() btnClick : EventEmitter<any> = new EventEmitter();
+
+  constructor() {
+    this.text = '';
+  }
+
+  handleClick() {
+    return this.btnClick.emit();
+  }
 
 }
