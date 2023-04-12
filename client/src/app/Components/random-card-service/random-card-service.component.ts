@@ -17,9 +17,9 @@ export class RandomCardServiceComponent {
   handleClick() {
     this.clickCounter += 1;
     if (this.clickCounter % 2 !== 0) {
-      this.randomColorGenerator(6);
+      return this.randomColorGenerator(6);
     } else {
-      this.randomColorGenerator(3);
+      return this.randomColorGenerator(3);
     } 
   }
 

@@ -1,6 +1,8 @@
 <mat-tab-group mat-stretch-tabs="true" mat-align-tabs="start">
     <mat-tab label="RxJS">
-        <app-random-card-service></app-random-card-service>
+        <div [ngStyle]="{'background-color': hexadecimalId }">
+            <app-random-card-service></app-random-card-service>
+        </div>
     </mat-tab>
     <mat-tab label="Outputs">Outputs</mat-tab>
 </mat-tab-group>
