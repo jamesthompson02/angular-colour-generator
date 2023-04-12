@@ -14,7 +14,6 @@ export class HexadecimalDisplayComponent implements OnChanges {
   }
   
   ngOnChanges(changes : SimpleChanges) {
-    console.log(changes);
     return this.updateBackgroundColor();
   }
 

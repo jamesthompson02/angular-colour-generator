@@ -1,4 +1,4 @@
-import { AfterViewChecked, ChangeDetectorRef, Component, OnInit} from '@angular/core';
+import { AfterViewChecked, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
 import { Subscription } from 'rxjs';
 import { RandomRxjsService } from 'src/app/Services/random-rxjs.service';
 
@@ -8,7 +8,7 @@ import { RandomRxjsService } from 'src/app/Services/random-rxjs.service';
   styleUrls: ['./random-generator-page.component.scss'],
   providers: [RandomRxjsService]
 })
-export class RandomGeneratorPageComponent implements OnInit, AfterViewChecked  {
+export class RandomGeneratorPageComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   sub! : Subscription;
   hexadecimalId : string;
@@ -30,6 +30,10 @@ export class RandomGeneratorPageComponent implements OnInit, AfterViewChecked  {
 
   ngAfterViewChecked(): void {
     return this.changeDetectorRef.detectChanges();
+  }
+
+  ngOnDestroy(): void {
+    this.sub.unsubscribe();
   }
 
 }

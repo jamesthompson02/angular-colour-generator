@@ -10,7 +10,6 @@ export class RandomRxjsService {
   public hexIds$ = this._hexIds$.asObservable();
 
   public dispatch(hexID : string) {
-    console.log('dispatch');
-   this._hexIds$.next(hexID);
+    this._hexIds$.next(hexID);
   }
 }
