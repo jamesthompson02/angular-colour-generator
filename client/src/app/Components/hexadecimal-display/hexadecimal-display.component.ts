@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hexadecimal-display',
@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./hexadecimal-display.component.scss']
 })
 export class HexadecimalDisplayComponent {
+  @Input() hexadecimal: string;
 
+  constructor() {
+    this.hexadecimal = '';
+  }
+  
 }

@@ -10,6 +10,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {ClipboardModule} from '@angular/cdk/clipboard';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './Pages/home-page/home-page.component';
@@ -51,7 +52,8 @@ import { HexadecimalDisplayComponent } from './Components/hexadecimal-display/he
     MatCardModule,
     MatInputModule,
     MatSliderModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
