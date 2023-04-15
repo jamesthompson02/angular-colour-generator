@@ -29,7 +29,7 @@ export class RandomGeneratorPageComponent implements OnInit, AfterViewChecked, O
       this.hexadecimalId = hexId;
     });
     this.snackbarSub = this.snackbarService.snackbarMessage$.subscribe((message) => {
-      this.snackbar.open(message, '', {duration: 1500});
+      this.snackbar.open(message, 'Dismiss', {duration: 1500});
     })
   }
 
