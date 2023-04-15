@@ -1,19 +1,25 @@
 import { AfterViewChecked, ChangeDetectorRef, Component, OnDestroy, OnInit} from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Subscription } from 'rxjs';
 import { RandomRxjsService } from 'src/app/Services/random-rxjs.service';
+import { SnackbarService } from 'src/app/Services/snackbar.service';
 
 @Component({
   selector: 'app-random-generator-page',
   templateUrl: './random-generator-page.component.html',
   styleUrls: ['./random-generator-page.component.scss'],
-  providers: [RandomRxjsService]
+  providers: [RandomRxjsService, SnackbarService]
 })
 export class RandomGeneratorPageComponent implements OnInit, AfterViewChecked, OnDestroy {
 
   sub! : Subscription;
+  snackbarSub! : Subscription;
   hexadecimalId : string;
 
-  constructor( private randomRxjsService: RandomRxjsService, private changeDetectorRef : ChangeDetectorRef ) {
+  constructor( private randomRxjsService: RandomRxjsService, 
+    private changeDetectorRef : ChangeDetectorRef, 
+    private snackbarService: SnackbarService,
+    private snackbar: MatSnackBar ) {
     this.hexadecimalId = '';
     
   }
@@ -21,6 +27,9 @@ export class RandomGeneratorPageComponent implements OnInit, AfterViewChecked, O
   ngOnInit() {
     this.sub = this.randomRxjsService.hexIds$.subscribe((hexId) => {
       this.hexadecimalId = hexId;
+    });
+    this.snackbarSub = this.snackbarService.snackbarMessage$.subscribe((message) => {
+      this.snackbar.open(message, '', {duration: 1500});
     })
   }
 

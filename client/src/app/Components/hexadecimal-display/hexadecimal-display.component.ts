@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { RandomRxjsService } from 'src/app/Services/random-rxjs.service';
+import { SnackbarService } from 'src/app/Services/snackbar.service';
 
 @Component({
   selector: 'app-hexadecimal-display',
@@ -9,7 +10,7 @@ import { RandomRxjsService } from 'src/app/Services/random-rxjs.service';
 export class HexadecimalDisplayComponent implements OnChanges {
   @Input() hexadecimal: string;
 
-  constructor( private randomRxjsService: RandomRxjsService ) {
+  constructor( private randomRxjsService: RandomRxjsService, private snackbarService: SnackbarService ) {
     this.hexadecimal = '';
   }
   
@@ -23,6 +24,10 @@ export class HexadecimalDisplayComponent implements OnChanges {
     } else {
       return
     }
+  }
+
+  snackbarMessage(message: string) {
+    return this.snackbarService.dispatch(message);
   }
 
   copyHexadecimal(){
